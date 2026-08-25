@@ -356,10 +356,10 @@ footer {
                 font-size: 0.875rem;
                 font-weight: 600;
                 color: var(--paragraph-color);
+                transition: color 0.5s;
                 
                 &:hover {
                     color: var(--secondary-color);
-                    transition: color 0.5s;
                 }
 
                 &::after {
@@ -453,13 +453,13 @@ footer {
 
     footer {
         display: grid;
-        align-items: center;
-        justify-content: space-between;
-        gap: 0;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-areas: 
             "logo address terms-and-policy"
             "copyright address terms-and-policy";
+
+        align-items: center;
+        gap: 0;
         
         > .logo {
             grid-area: logo;
@@ -470,23 +470,24 @@ footer {
 
         .address {
             grid-area: address;
+            justify-self: center;
             align-items: flex-start;
             text-align: left;
-            justify-self: center;
             padding: 1.5rem 0;
         }
 
         .terms-and-policy {
             grid-area: terms-and-policy;
+            justify-self: start;
             justify-content: flex-start;
             align-items: flex-start;
-            flex-direction: column;
-            padding: 1.5rem 0;
             flex-direction: row;
+            padding: 1.5rem 0;
         }
 
         .copyright {
             grid-area: copyright;
+            justify-self: start;
             text-align: left;
         }
     }
