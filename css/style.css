@@ -442,12 +442,52 @@ footer {
             text-align: left;
         }
 
+        .clinic-atributes {
+            align-items: flex-start;
+        }
+
         img {
             width: 50%;
         }
     }
 
     footer {
-        flex-direction: row;
+        display: grid;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: 
+            "logo address terms-and-policy"
+            "copyright address terms-and-policy";
+        
+        > .logo {
+            grid-area: logo;
+            justify-self: start;
+            padding: 0;
+            margin: 1rem 0;
+        }
+
+        .address {
+            grid-area: address;
+            align-items: flex-start;
+            text-align: left;
+            justify-self: center;
+            padding: 1.5rem 0;
+        }
+
+        .terms-and-policy {
+            grid-area: terms-and-policy;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-direction: column;
+            padding: 1.5rem 0;
+            flex-direction: row;
+        }
+
+        .copyright {
+            grid-area: copyright;
+            text-align: left;
+        }
     }
 }
